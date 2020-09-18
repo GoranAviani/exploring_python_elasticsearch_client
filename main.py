@@ -4,6 +4,7 @@ from datetime import datetime
 
 def main():
     es = Elasticsearch()
+    print("Elasticsearch client version:", es.info()["version"], "\n")
 
     doc = {
         'company_name': 'Goran',

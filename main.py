@@ -4,6 +4,14 @@ from datetime import datetime
 
 def main():
     es = Elasticsearch()
+    print("Elasticsearch client version:", es.info()["version"], "\n")
+
+
+    #check if index already exists:
+    index_exists = es.indices.exists(index="test-index")
+    print('{} index exists: {}'.format("test-index", index_exists))
+    index_exists = es.indices.exists(index="test-index1111")
+    print('{} index exists: {}'.format("test-index1111", index_exists))
 
     doc = {
         'company_name': 'Goran',
